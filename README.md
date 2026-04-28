@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 TaskFlow Pro
 
-Currently, two official plugins are available:
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)](https://your-taskflow.vercel.app)
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-3B82F6?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Modern Task Manager** with glassmorphism UI, real-time search, filters, and email newsletter. Built as a portfolio showcase following real-world frontend engineering standards.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+## ✨ **What It Does**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+TaskFlow Pro is a **fully functional task manager** that demonstrates:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### **Core Features**
+- ✅ **Add/Edit/Delete** tasks with categories & status
+- 🔍 **Live search** across titles & categories  
+- 🎛️ **Smart filters** (All/To Do/In Progress/Done) with live counts
+- 📱 **Mobile-first responsive** design
+- 💾 **Persistent storage** (localStorage)
+- ✉️ **Email newsletter signup** with HTML5 validation (**MANDATORY requirement**)
+- 🎨 **Glassmorphism UI** with smooth animations
+- 🌙 **Dark mode** support (bonus)
+- 🖱️ **Drag & drop** reordering (bonus)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### **Interactive Elements (3+ required)**
+1. **CRUD operations** - Create, read, update, delete tasks
+2. **Real-time search** - Instant filtering as you type
+3. **Status filters** - Dynamic button states with counts
+4. **Email form** - Validation + loading states
+5. **Toggle task completion** - Visual feedback
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🎯 **Live Demo**
+[🚀 View Live](https://your-taskflow.vercel.app)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 **Tech Stack**<div align="center">
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 🚀 TaskFlow Pro
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)](https://your-taskflow.vercel.app)
+[![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-3B82F6?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
+
+**Modern Task Manager** with glassmorphism UI, real-time search, filters, and email newsletter. Built as a portfolio showcase following real-world frontend engineering standards.
+
+
+</div>
+
+## ✨ **What It Does**
+
+TaskFlow Pro is a **fully functional task manager** that demonstrates:
+
+### **Core Features**
+- ✅ **Add/Edit/Delete** tasks with categories & status
+- 🔍 **Live search** across titles & categories  
+- 🎛️ **Smart filters** (All/To Do/In Progress/Done) with live counts
+- 📱 **Mobile-first responsive** design
+- 💾 **Persistent storage** (localStorage)
+- ✉️ **Email newsletter signup** with HTML5 validation (**MANDATORY requirement**)
+- 🎨 **Glassmorphism UI** with smooth animations
+- 🌙 **Dark mode** support (bonus)
+- 🖱️ **Drag & drop** reordering (bonus)
+
+### **Interactive Elements (3+ required)**
+1. **CRUD operations** - Create, read, update, delete tasks
+2. **Real-time search** - Instant filtering as you type
+3. **Status filters** - Dynamic button states with counts
+4. **Email form** - Validation + loading states
+5. **Toggle task completion** - Visual feedback
+
+## 🎯 **Live Demo**
+[🚀 View Live](https://your-taskflow.vercel.app)
+
+## 🛠 **Tech Stack**
