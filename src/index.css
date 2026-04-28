@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/20 backdrop-blur-xl border border-white/30;
+  }
+}
+
+@layer utilities {
+  @responsive {
+    .glass {
+      @apply bg-white/20 backdrop-blur-xl border border-white/30;
+    }
+    
+    .gradient-text {
+      @apply bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent;
+    }
+  }
+}
+
+/* Custom animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
