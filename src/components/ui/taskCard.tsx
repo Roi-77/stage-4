@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from './Button';
+import Button from './button';
 
 const TaskCard = ({ task, onToggle, onDelete, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
