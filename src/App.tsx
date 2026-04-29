@@ -1,7 +1,7 @@
 import { TaskProvider } from './context/taskContext';
 import Header from './components/layout/header';
 import TaskList from './components/features/taskList';
-import NewsLetter from './components/layout/newsLetter';
+{/*import NewsLetter from './components/layout/newsLetter';*/}
 import './index.css';
 
 function AppContent() {
