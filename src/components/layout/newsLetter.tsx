@@ -35,7 +35,7 @@ const NewsLetter = () => {
   };
 
   return (
-    <section className="glass py-16 px-8 lg:px-16 rounded-3xl mt-24 mx-6 lg:mx-0 shadow-2xl border border-white/30">
+    <section className="glass py-16 px-8 lg:px-16 rounded-3xl mt-12 mx-6 lg:mx-0 shadow-2xl border border-white/30" id="email-signup">
       <div className="max-w-2xl mx-auto text-center space-y-8">
         {/* Hero */}
         <div>
@@ -48,11 +48,13 @@ const NewsLetter = () => {
         </div>
 
         {/* Form - MANDATORY EMAIL INPUT */}
-        <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-4 max-w-lg mx-auto">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto w-full">
           <div className="flex-1 relative">
             <input
-              type="email"  // ← MANDATORY: type="email"
-              required      // ← HTML5 validation
+              id="newsletter-email"
+              aria-label="Newsletter email"
+              type="email"
+              required
               placeholder="your.email@example.com"
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
