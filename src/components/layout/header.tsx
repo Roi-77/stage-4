@@ -1,12 +1,22 @@
 import Button from '../ui/button';
-import { useTasks } from '../../context/taskContext';
+import { useTasks, type Task } from '../../context/taskContext';
+import NewTaskModal from '../features/newTaskModal';
+import { useState } from 'react';
+
 
 const Header = () => {
-  const { state } = useTasks();
+  const { state, dispatch } = useTasks();
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleAddTask = (task: Task) => {
+    dispatch({ type: 'ADD_TASK', payload: task });
+  };
+  
   
   const getStats = () => {
     const total = state.tasks.length;
-    const completed = state.tasks.filter(t => t.completed).length;
+    const completed = state.tasks.filter(t => t.status === 'done').length;
     const pending = total - completed;
     return { total, completed, pending };
   };
@@ -39,9 +49,14 @@ const Header = () => {
               Week
             </button>
           </div>
-          <Button size="lg">
-            + New Task
-          </Button>
+        <Button size="lg" onClick={() => setShowModal(true)}>
+          + New Task
+        </Button>
+        <NewTaskModal 
+            isOpen={showModal} 
+            onClose={() => setShowModal(false)} 
+            onAdd={handleAddTask}
+          />
         </div>
       </div>
     </header>
