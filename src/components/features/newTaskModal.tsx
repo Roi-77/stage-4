@@ -1,24 +1,60 @@
 import { useState, useEffect, useRef } from 'react';
 import Button from '../ui/button';
 
-const NewTaskModal = ({ isOpen, onClose, onAdd }) => {
-  const [formData, setFormData] = useState({ title: '', category: '', status: 'todo' });
-  const inputRef = useRef(null);
+interface TaskData {
+  id: string;
+  title: string;
+  category: string;
+  status: 'todo' | 'in-progress' | 'done';
+  completed: boolean;
+}
 
-  // Handle Escape key
+interface NewTaskModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onAdd: (task: TaskData) => void;
+}
+
+const NewTaskModal = ({ isOpen, onClose, onAdd }: NewTaskModalProps) => {
+  // ✅ 1. Add the missing inputRef declaration
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const [formData, setFormData] = useState<{
+    title: string;
+    category: string;
+    status: 'todo' | 'in-progress' | 'done';
+  }>({
+    title: '',
+    category: '',
+    status: 'todo'
+  });
+
   useEffect(() => {
-    const handleEsc = (e) => { if (e.key === 'Escape') onClose(); };
+    // ✅ 2. Type the keyboard event as 'KeyboardEvent'
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    
     window.addEventListener('keydown', handleEsc);
-    if (isOpen) inputRef.current?.focus(); // Auto-focus input
+    
+    // Use a tiny timeout to ensure the modal animation has started before focusing
+    if (isOpen) {
+      setTimeout(() => inputRef.current?.focus(), 50);
+    }
+    
     return () => window.removeEventListener('keydown', handleEsc);
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formData.title.trim()) {
-      onAdd({ ...formData, id: Date.now() }); // Added ID generation
+      onAdd({
+        ...formData,
+        id: Date.now().toString(),
+        completed: formData.status === 'done'
+      });
       setFormData({ title: '', category: '', status: 'todo' });
       onClose();
     }
@@ -27,19 +63,19 @@ const NewTaskModal = ({ isOpen, onClose, onAdd }) => {
   return (
     <div 
       className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
-      onClick={onClose} // Close on backdrop click
+      onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div 
         className="glass w-full max-w-md p-8 rounded-3xl shadow-2xl animate-slide-up"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+        onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-2xl font-bold text-slate-900 mb-6">New Task</h2>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <input 
-            ref={inputRef}
+            ref={inputRef} // ✅ Now this reference is valid
             type="text" 
             placeholder="What needs to be done?" 
             value={formData.title} 
