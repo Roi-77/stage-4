@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import Button from './button';
+import { type Task } from '../../context/taskContext'; 
 
-const TaskCard = ({ task, onToggle, onDelete, onEdit }) => {
+interface TaskCardProps {
+  task: Task;
+  onToggle: (id: string) => void;
+  onDelete: (id: string) => void;
+  onEdit?: (id: string, newTitle: string) => void; // Optional if not always passed
+}
+
+const TaskCard = ({ task, onToggle, onDelete, onEdit }: TaskCardProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(task.title);
 
-  const getStatusStyles = (status) => {
-    const styles = {
+  const getStatusStyles = (status: Task['status']) => {
+    const styles: Record<string, string> = {
       todo: 'border-blue-400 bg-blue-50/50',
       'in-progress': 'border-yellow-400 bg-yellow-50/50',
       done: 'border-green-400 bg-green-50/50'

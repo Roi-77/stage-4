@@ -1,10 +1,18 @@
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'danger';
+  size?: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+}
+
+
 const Button = ({ 
   children, 
   variant = 'primary', 
   size = 'md', 
   className = '', 
   ...props 
-}) => {
+}: ButtonProps) => {
   const base = 'font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-95';
   
   const variants = {

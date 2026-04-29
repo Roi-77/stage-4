@@ -1,4 +1,4 @@
-import { useTasks } from '../../context/taskContext';
+import { useTasks, type Task } from '../../context/taskContext';
 import TaskCard from '../ui/taskCard';
 import Button from '../ui/button';
 
@@ -14,7 +14,7 @@ const TaskList = () => {
   });
 
   // Status counts
-  const getStatusCount = (status) => state.tasks.filter(t => t.status === status).length;
+  const getStatusCount = (status: string) => state.tasks.filter(t => t.status === status).length;
 
   const statusOptions = [
     { id: 'all', label: 'All', count: state.tasks.length },
@@ -68,7 +68,7 @@ const TaskList = () => {
       {/* Tasks Grid */}
       {filteredTasks.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredTasks.map(task => (
+          {filteredTasks.map((task: Task) => (
             <TaskCard
               key={task.id}
               task={task}

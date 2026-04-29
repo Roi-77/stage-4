@@ -1,8 +1,39 @@
-import { createContext, useContext, useReducer, useEffect } from 'react';
+import { createContext, useContext, useReducer, useEffect,  } from 'react';
+import { type ReactNode, type Dispatch } from 'react';
 
-const TaskContext = createContext(null);
+export interface Task {
+  id: string;
+  title: string;
+  category: string;
+  status: 'todo' | 'in-progress' | 'done';
+  completed: boolean;
+}
 
-const taskReducer = (state, action) => {
+interface TaskState {
+  tasks: Task[];
+  filter: string;
+  search: string;
+}
+
+type TaskAction =
+
+  | { type: 'ADD_TASK'; payload: Omit<Task, 'id' | 'completed'> }
+  | { type: 'TOGGLE_TASK'; payload: string }
+
+  | { type: 'DELETE_TASK'; payload: string }
+  | { type: 'SET_FILTER'; payload: string }
+  | { type: 'SET_SEARCH'; payload: string }
+
+  | { type: 'LOAD_TASKS'; payload: Task[] };
+
+  interface TaskContextType {
+  state: TaskState;
+  dispatch: Dispatch<TaskAction>;
+}
+
+const TaskContext = createContext<TaskContextType | undefined>(undefined);
+
+const taskReducer = (state: TaskState, action: TaskAction): TaskState => {
   switch (action.type) {
     case 'ADD_TASK':
       return {
@@ -44,7 +75,7 @@ const taskReducer = (state, action) => {
   }
 };
 
-export const TaskProvider = ({ children }) => {
+export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(taskReducer, {
     tasks: [],
     filter: 'all',

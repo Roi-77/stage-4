@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from '../ui/button';
 
 const NewsLetter = () => {
@@ -6,11 +6,12 @@ const NewsLetter = () => {
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     // HTML5 Email Validation (MANDATORY!)
-    const emailInput = e.target.querySelector('input[type="email"]');
+    const form = e.currentTarget;
+    const emailInput = form.querySelector('input[type="email"]')as HTMLInputElement;
     if (!emailInput.validity.valid) {
       setError('Please enter a valid email address');
       setStatus('error');
@@ -54,7 +55,7 @@ const NewsLetter = () => {
               required      // ← HTML5 validation
               placeholder="your.email@example.com"
               value={email}
-              onChange={(e) => {
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setEmail(e.target.value);
                 setStatus('idle');
                 setError('');
