@@ -12,8 +12,9 @@ function AppContent() {
       <Header />
       <main>
       <TaskList />
-
+      <section id="pricing">
       <Pricing />
+      </section>
 
       <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
         <Email />
