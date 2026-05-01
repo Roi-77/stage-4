@@ -1,8 +1,10 @@
 import { TaskProvider } from './context/taskContext';
 import Header from './components/layout/header';
 import TaskList from './components/features/taskList';
-{/*import NewsLetter from './components/layout/newsLetter';*/}
+import Email from './components/layout/email';
+import Pricing from './components/layout/pricing';
 import './index.css';
+import { Toaster } from 'react-hot-toast';
 
 function AppContent() {
   return (
@@ -30,6 +32,9 @@ function AppContent() {
       {/*<NewsLetter />*/}
       <TaskList />
       <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
+         <Email />
+         <Toaster />
+         <Pricing />
       </section>
     </div>
   );
