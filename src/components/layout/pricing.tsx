@@ -2,6 +2,16 @@ import Button from '../ui/button'
 import { toast } from 'react-hot-toast'
 
 const Pricing = () => {
+
+    interface Plan {
+  name: string;
+  price: string;
+  priceMonthly: string;
+  features: string[];
+  cta: string;
+  popular: boolean;
+}
+
   const plans = [
     {
       name: 'Starter',
@@ -37,7 +47,7 @@ const Pricing = () => {
     fontWeight: '500',
   };
 
-  const handleSubscription = (plan) => {
+  const handleSubscription = (plan: Plan) => {
     if (plan.cta === 'Current Plan') {
       toast('You are already on this plan!', {
         icon: 'ℹ️',
