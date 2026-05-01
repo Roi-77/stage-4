@@ -14,7 +14,6 @@ function AppContent() {
 
       <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
         <Email />
-        <Pricing />
       </section>
 
       <Toaster />
@@ -26,6 +25,7 @@ function App() {
   return (
     <TaskProvider>
       <AppContent />
+      <Pricing />
     </TaskProvider>
   );
 }
