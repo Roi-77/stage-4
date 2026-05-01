@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { useTasks, type Task } from '../../context/taskContext';
 import Button from '../ui/button';
 import TaskCard from '../ui/taskCard';
-import { Menu } from 'lucide-react';
+
 
 const statusOptions = [
   { id: 'all', label: 'All Tasks', icon: '📊', color: 'from-slate-500 to-slate-700' },
