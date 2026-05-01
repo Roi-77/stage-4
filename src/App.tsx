@@ -10,11 +10,15 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       <Header />
+      <main>
       <TaskList />
+
+      <Pricing />
 
       <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
         <Email />
       </section>
+      </main>
 
       <Toaster />
     </div>
@@ -25,7 +29,6 @@ function App() {
   return (
     <TaskProvider>
       <AppContent />
-      <Pricing />
     </TaskProvider>
   );
 }

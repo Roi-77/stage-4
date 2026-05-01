@@ -34,7 +34,7 @@ const Pricing = () => {
   };
 
   return (
-    <section id="pricing" className='p-6 mt-4 w-full'>
+    <section id="pricing"  className='p-6 mt-4 w-full' aria-label="pricing" >
       <div className="max-w-6xl mx-auto p-4">
         {/* Header */}
         <div className="text-center space-y-2 mb-20">
