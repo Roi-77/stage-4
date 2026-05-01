@@ -28,7 +28,7 @@ const NewsLetter = () => {
       // Simulate success
       setStatus('success');
       setEmail('');
-    } catch (err) {
+    } catch {
       setStatus('error');
       setError('Something went wrong. Please try again.');
     }

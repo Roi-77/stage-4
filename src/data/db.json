@@ -1,0 +1,72 @@
+[
+  {
+    "id": "prod-1",
+    "title": "Implement OAuth2 Authentication",
+    "category": "Security",
+    "status": "in-progress",
+    "completed": false
+  },
+  {
+    "id": "prod-2",
+    "title": "Refactor state management to Zustand",
+    "category": "Frontend",
+    "status": "todo",
+    "completed": false
+  },
+  {
+    "id": "prod-3",
+    "title": "Configure Redis caching layer",
+    "category": "Backend",
+    "status": "done",
+    "completed": true
+  },
+  {
+    "id": "prod-4",
+    "title": "Update documentation for v2.0",
+    "category": "Docs",
+    "status": "todo",
+    "completed": false
+  },
+  {
+    "id": "prod-5",
+    "title": "Fix memory leak in Dashboard charts",
+    "category": "Frontend",
+    "status": "in-progress",
+    "completed": false
+  },
+  {
+    "id": "prod-6",
+    "title": "Setup Prometheus monitoring",
+    "category": "DevOps",
+    "status": "done",
+    "completed": true
+  },
+  {
+    "id": "prod-7",
+    "title": "Design dark mode color palette",
+    "category": "Design",
+    "status": "todo",
+    "completed": false
+  },
+  {
+    "id": "prod-8",
+    "title": "Migrate database to AWS RDS",
+    "category": "Backend",
+    "status": "in-progress",
+    "completed": false
+  },
+  {
+    "id": "prod-9",
+    "title": "Run security penetration test",
+    "category": "Testing",
+    "status": "todo",
+    "completed": false
+  },
+  {
+    "id": "prod-10",
+    "title": "Optimize image assets for mobile",
+    "category": "Frontend",
+    "status": "done",
+    "completed": true
+  }
+]
